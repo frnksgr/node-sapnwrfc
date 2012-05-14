@@ -2,7 +2,7 @@
   'variables': {
     'module_name': 'sapnwrfc',
     'library': 'shared_library',
-    'target_arch': 'ia32',
+    'target_arch': 'x64',
     'output_directory': 'Release',
   },
 
@@ -48,7 +48,7 @@
           '_UNICODE'
         ],
         'include_dirs': [
-          '<(module_root_dir)/nwrfcsdk/include',
+          '<(module_root_dir)/nwrfcsdk/include'
         ],
         'msvs_configuration_attributes': {
           'OutputDirectory': '$(SolutionDir)$(ConfigurationName)',
@@ -73,7 +73,9 @@
           '-pedantic'
         ],
         'include_dirs': [
-          '/usr/local/include'
+          '/usr/local/include',
+	  '/usr/local/include/nwrfcsdk',
+	  'nwrfcsdk/include'  # if you symlink nwrfcsdk
         ],
         'defines': [
           'SAPonUNIX',
